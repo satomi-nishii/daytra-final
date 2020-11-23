@@ -148,7 +148,7 @@ img {
         padding: 13px 20px;
     }
 
-    &.contact {
+    &.inquiry {
         padding: 23px 30px;
         background-color: #603813;
 
@@ -489,6 +489,11 @@ news
         position: relative;
     }
 
+    @include mq('sp') {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
     .util-link {
         @include mq('pc') {
             position: absolute;
@@ -507,13 +512,6 @@ news
     @include mq('pc') {
         display: flex;
         flex-wrap: wrap;
-    }
-}
-
-.news-header {
-    @include mq('sp') {
-        text-align: center;
-        margin-top: 30px;
     }
 }
 
@@ -624,7 +622,7 @@ news
 }
 
 
-/* pagenation
+/* pagenation（archive）
 -------------------- */
 .pagenation {
 	margin-top: 30px;
@@ -650,7 +648,9 @@ news
 	opacity: $hover-opacity;
 }
 
-.page-numbers {
+.page-numbers,
+.page-numbers.next,
+.page-numbers.prev {
 	background: transparent;
 	border: 3px solid #1A1A1A;
     color: #1A1A1A;
@@ -658,7 +658,7 @@ news
 	display: inline-block;
 	font-size: 12px;
 	height: 27px;
-	line-height: 23px;
+	line-height: 20px;
 	margin-right: 9px;
 	min-width: 27px;
 	text-align: center;
@@ -676,13 +676,177 @@ news
 	font-weight: 600;
 }
 
-.page-numbers.dots,
-.page-numbers.next,
-.page-numbers.prev {
+.page-numbers.dots {
 	border: none;
-	line-height: 23px;
+	line-height: 20px;
 	min-width: initial;
 	width: auto;
+}
+
+
+// 以下singleページのスタイル
+.news-item {
+    &.is-single {
+        width: 100%;
+        background-color: rgba(255, 255, 255, .85);
+        margin-top: 30px;        
+    }
+}
+        
+.news-item-img {
+    &.is-single {
+        position: relative;
+        overflow: hidden;
+        padding-top: 71%; /* 比率 */
+    
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.news-item-body {
+    &.is-single {
+        height: auto;
+        padding: 0;
+    }
+}
+
+.news-item-meta {
+    background-color: #1A1A1A;
+    padding: 15px 30px;
+
+    @include mq('sp') {
+        padding: 15px
+    }
+}
+
+.news-item-date {
+    &.is-single {
+        font-size: 12px;
+        color: $color-font-light;
+    }
+}
+
+.news-item-title {
+    &.is-single {
+        color: $color-font-light;
+        font-size: 26px;
+        font-weight: 600;
+        margin-top: 5px;
+
+        @include mq('sp') {
+            font-size: 22px;
+        }
+    }
+}
+
+.news-item-content {
+    padding: 30px;
+    line-height: 1.625;
+
+    @include mq('sp') {
+        font-size: 14px;
+    }
+
+    h5 {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.18182;
+
+        @include mq('sp') {
+            font-size: 20px;
+        }
+    }
+
+    h6 {
+        font-size: 18px;
+        font-weight: 600;
+
+        @include mq('sp') {
+            font-size: 16px;
+        }
+    }
+}
+
+
+/* pagenation（single）
+-------------------- */
+.pagenation {
+    &.is-single {
+        display: flex;
+        text-align: start;
+    } 
+}
+
+.page-meta {
+    flex: 0 1 50%;
+    color: $color-font-base;
+
+    &.prev {
+        position: relative;
+        padding-left: 45px;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            content : "<";
+            background-color: #1A1A1A;
+            color: #F1C201;
+            border-radius: 50%;
+            display: block;
+            width: 33px;
+            height: 33px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 33px;
+            text-align: center;
+        }
+    }
+
+    &.next {
+        text-align: right;
+        margin-left: 30px;
+        padding-right: 45px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            content : ">";
+            background-color: #1A1A1A;
+            color: #F1C201;
+            border-radius: 50%;
+            display: block;
+            width: 33px;
+            height: 33px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 33px;
+            text-align: center;
+        }
+    }
+}
+
+.page-date {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.page-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
 }
 
 
@@ -1203,6 +1367,151 @@ schedule
                 margin-top: 15px;
             }
         }
+    }
+}
+
+/* --------------------
+inquiry
+-------------------- */
+.inquiry-form {
+    background-color: rgba(255, 255, 255, .29);
+    margin-top: 24px;
+    padding: 30px;
+}
+
+.inquiry-text {
+    font-weight: 600;
+    line-height: 1.66667;
+    
+    @include mq('pc') {
+        font-size: 18px;
+    }
+}
+
+.inquiry-list {
+    margin-top: 22px;
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        border: 0;
+        padding: .2em .5em;
+        
+        @include mq('pc') {
+            font-size: 18px; //入力するフォントのサイズ
+        }
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 45px;
+
+        @include mq('sp') {
+            height: 40px;
+        }
+    }
+
+    textarea {
+        min-height: 165px;
+        resize: vertical;
+    }
+}
+
+// 以下inputのオートコンプリートしたときの背景色の初期化の記述
+@keyframes onAutoFillStart { from {} to {}}
+
+input:-webkit-autofill {
+animation-name: onAutoFillStart;
+transition: background-color 50000s ease-in-out 0s;
+}
+
+.inquiry-item {
+    @include mq('pc') {
+        display: flex;
+    }
+
+    &:not(first-child) {
+        margin-top: 15px;
+
+        @include mq('sp') {
+            margin-top: 5px;
+        }
+    }
+}
+
+.inquiry-item-title {
+    font-weight: 600;
+    
+    @include mq(pc) {
+        height: 45px;
+        line-height: 45px;
+        font-size: 18px;
+        text-align: right;
+        flex: 0 1 230px;
+    }
+    
+    @include mq('sp') {
+        height: 30px;
+        line-height: 30px;
+        
+    }
+}
+
+.inquiry-item-input {
+    @include mq(pc) {
+        flex: 0 1 520px;
+        margin-left: 16px;
+    }
+}
+
+.inquiry-footer {
+    text-align: center;
+    margin-top: 30px;
+
+    .util-link {
+        background-color: #B2B2B2;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 21px 82px;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.-active {
+            background-color: $color-util-link;
+            color: #fff;
+
+            &:hover {
+                opacity: $hover-opacity;
+            }
+        }
+
+        @include mq('sp') {
+            width: 100%;
+        }
+    }
+}
+
+.inquiry-message {
+    font-weight: 600;
+    line-height: 1.66667;
+    text-align: center;
+    display: none;
+    
+    @include mq('pc') {
+        font-size: 18px;
+    }
+
+    &.-error {
+        color: #f00;
+    }
+}
+
+.news {
+    &.is-inquiry {
+        display: none;
     }
 }
 

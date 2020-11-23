@@ -80,12 +80,73 @@
                 <meta property="position" content="1">
             </span>
             <i class="fas fa-angle-right"></i>
-            <span class="current-item"> > news</span>
+            <span class="current-item"> > 問い合わせ</span>
         </div><!-- /breadcrumb -->
 
+        <!-- .inquiry -->
+        <section id="inquiry" class="inquiry section container lower">
+            <h3 class="util-title wow fadeInUp">INQUIRY</h3>
+            <form id="js-form" action="" class="inquiry-form wow fadeInUp" method="POST">
+                <p class="inquiry-text">
+                    小池博史ブリッジプロジェクトにご興味を持っていただきまして、ありがとうございます。<br>
+                    公演に関するお問い合わせ、公演・ワークショップのご依頼など、<br>
+                    お電話（03-3385-2066）か、下記フォームよりお気軽にお問い合わせください。<br>
+                </p>
+                <dl class="inquiry-list">
+                    <div class="inquiry-item">
+                        <dt class="inquiry-item-title">
+                            お名前
+                        </dt>
+                        <dd class="inquiry-item-input">
+                            <input type="text" name="" required>
+                        </dd>
+                    </div>
+                    <div class="inquiry-item">
+                        <dt class="inquiry-item-title">
+                            電話番号
+                        </dt>
+                        <dd class="inquiry-item-input">
+                            <input type="text" name="">
+                        </dd>
+                    </div>
+                    <div class="inquiry-item">
+                        <dt class="inquiry-item-title">
+                            メールアドレス
+                        </dt>
+                        <dd class="inquiry-item-input">
+                            <input type="email" name="" required>
+                        </dd>
+                    </div>
+                    <div class="inquiry-item">
+                        <dt class="inquiry-item-title">
+                            内容
+                        </dt>
+                        <dd class="inquiry-item-input">
+                            <textarea name=""></textarea>
+                        </dd>
+                    </div>
+                </dl>
+                <div class="inquiry-footer">
+                    <div class="inquiry-footer-submit">
+                        <button id="js-submit" class="util-link -submit" type="submit" disabled>送信</button>
+                    </div>
+                </div> 
+                <div id="js-success" class="inquiry-message">
+                    <p>お問い合わせありがとうございました。<br>メッセージは正常に送信されました。</p>
+                </div>
+                <div id="js-error" class="inquiry-message -error">
+                    <p>送信に失敗しました。ページを更新して再度送信してください。</p>
+                </div>
+            </form>
+        </section>
+        <!-- /.inquiry -->  
+        
         <!-- .news -->
-        <section id="news" class="news container section lower">
-            <h3 class="util-title wow fadeInUp">NEWS</h3>
+        <section id="js-success" class="news container section is-inquiry">
+            <div class="news-header">
+                <h3 class="util-title wow fadeInUp">LATEST NEWS</h3>
+                <a href="#" class="util-link detail wow fadeInUp">ニュース一覧へ</a>
+            </div>
             <ul class="news-item-list">
                 <li class="news-item wow fadeInUp">
                     <a href="#" class="news-item-link">
@@ -94,7 +155,7 @@
                         </div>
                         <div class="news-item-body">
                             <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">「完全版マハーバーラタ」2020年7月・東京公演！！</h4>
+                            <h3 class="news-item-title">「完全版マハーバーラタ」2020年7月・東京公演！！</h3>
                         </div>
                     </a>
                 </li>
@@ -105,7 +166,7 @@
                         </div>
                         <div class="news-item-body">
                             <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h4>
+                            <h3 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h3>
                         </div>
                     </a>
                 </li>
@@ -116,85 +177,37 @@
                         </div>
                         <div class="news-item-body">
                             <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h4>
-                        </div>
-                    </a>
-                </li>                <li class="news-item wow fadeInUp">
-                    <a href="#" class="news-item-link">
-                        <div class="news-item-img">
-                            <img src="./img/news-1.png" alt="">
-                        </div>
-                        <div class="news-item-body">
-                            <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">「完全版マハーバーラタ」2020年7月・東京公演！！</h4>
+                            <h3 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h3>
                         </div>
                     </a>
                 </li>
-                <li class="news-item wow fadeInUp">
-                    <a href="#" class="news-item-link">
-                        <div class="news-item-img">
+            </ul>
+            <ul class="news-item-list news-item-2nd wow fadeInUp">
+                <li class="news-item news-item-2nd">
+                    <a href="#" class="news-item-link news-item-2nd">
+                        <div class="news-item-img news-item-2nd">
                             <img src="./img/news-2.png" alt="">
                         </div>
-                        <div class="news-item-body">
-                            <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h4>
+                        <div class="news-item-body news-item-2nd">
+                            <time class="news-item-date news-item-2nd" datetime="2019-09-30">2019.9.30</time>
+                            <h3 class="news-item-title news-item-2nd">ニュースのタイトルが入ります。</h3>
                         </div>
                     </a>
                 </li>
-                <li class="news-item wow fadeInUp">
-                    <a href="#" class="news-item-link">
-                        <div class="news-item-img">
-                            <img src="./img/news-3.png" alt="">
-                        </div>
-                        <div class="news-item-body">
-                            <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h4>
-                        </div>
-                    </a>
-                </li>
-                <li class="news-item wow fadeInUp">
-                    <a href="#" class="news-item-link">
-                        <div class="news-item-img">
-                            <img src="./img/news-1.png" alt="">
-                        </div>
-                        <div class="news-item-body">
-                            <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">「完全版マハーバーラタ」2020年7月・東京公演！！</h4>
-                        </div>
-                    </a>
-                </li>
-                <li class="news-item wow fadeInUp">
-                    <a href="#" class="news-item-link">
-                        <div class="news-item-img">
+                <li class="news-item news-item-2nd wow fadeInUp">
+                    <a href="#" class="news-item-link news-item-2nd">
+                        <div class="news-item-img news-item-2nd">
                             <img src="./img/news-2.png" alt="">
                         </div>
-                        <div class="news-item-body">
-                            <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h4>
-                        </div>
-                    </a>
-                </li>
-                <li class="news-item wow fadeInUp">
-                    <a href="#" class="news-item-link">
-                        <div class="news-item-img">
-                            <img src="./img/news-3.png" alt="">
-                        </div>
-                        <div class="news-item-body">
-                            <time class="news-item-date" datetime="2019-09-30">2019.9.30</time>
-                            <h4 class="news-item-title">ニュースのタイトルが入ります。ニュースのタイトルが入ります。</h4>
+                        <div class="news-item-body news-item-2nd">
+                            <time class="news-item-date news-item-2nd" datetime="2019-09-30">2019.9.30</time>
+                            <h3 class="news-item-title news-item-2nd">ニュースのタイトルが入ります。</h3>
                         </div>
                     </a>
                 </li>
             </ul>
         </section>
-        <!-- /.news -->
-
-        <!-- .pagenation -->
-        <div class="pagenation wow fadeInUp">
-            <span class="page-numbers current">1</span>
-            <a class="page-numbers" href="#">2</a>
-            <a class="next page-numbers" href="#">></a>
-        </div><!-- /.pagenation -->
+        <!-- /.news -->        
 
         <!-- .schedule -->
         <div class="schedule container section">
