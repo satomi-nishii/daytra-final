@@ -101,6 +101,10 @@ img {
 .section {
     margin-top: 60px;
 
+    &.lower {
+        margin-top: 30px;
+    }
+
     @include mq('sp') {
         margin-top: 40px;
     }
@@ -131,13 +135,17 @@ img {
     &.booking {
         padding: 23px 30px;
 
+        &.archive {
+            padding: 13px 20px;
+        }
+
         @include mq('sp') {
-            padding: 12px 20px;
+            padding: 13px 20px;
         }
     }
 
     &.detail {
-        padding: 12px 20px;
+        padding: 13px 20px;
     }
 
     &.contact {
@@ -154,6 +162,25 @@ img {
     }
 
 }
+
+/* breadcrumb
+-------------------- */
+.breadcrumb {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.breadcrumb a {
+    color: $color-font-base;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.breadcrumb a:hover {
+	opacity: $hover-opacity;
+}
+
 
 /* --------------------
 header
@@ -302,8 +329,70 @@ top
 
     @include mq('sp') {
         text-align: center;
+        margin-top: -20px;
     }
 }
+
+
+/* top-lower
+-------------------- */
+.top-lower-wrap {
+    background-image: url('../img/top.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .2);
+    }
+}
+
+.top-lower-inner {
+    padding: 56px 40px;
+    position: relative;
+    
+    @include mq('pc') {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    @include mq('sp') {
+        padding: 40px 15px;
+    }
+}
+
+.top-lower-title {
+    max-width: 450px;
+}
+
+.top-lower-schedule {
+    max-width: 250px;
+    margin-left: 30px;
+
+    @include mq('sp') {
+        margin-top: 20px;
+    }
+}
+
+.top-lower-footer {
+    margin-top: -20px;
+    text-align: right;
+    position: relative;
+
+    @include mq('sp') {
+        text-align: center;
+    }
+}
+
 
 /* --------------------
 introduction
@@ -414,7 +503,6 @@ news
 }
 
 .news-item-list {
-    margin-top: 30px;
 
     @include mq('pc') {
         display: flex;
@@ -431,6 +519,7 @@ news
 
 .news-item {
     background-color: #fff;
+    margin-top: 30px;
 
     @include mq('pc') {
         width: calc(33.33333% - 30px * 2 / 3); 
@@ -443,10 +532,6 @@ news
 
     @include mq('sp') {
         width: 100%;
-
-        &:not(:first-child) {
-            margin-top: 30px;
-        }
     }
 
     // TOP下段のitemのスタイル
@@ -534,8 +619,72 @@ news
 
 .news-item-title {
     color: $color-font-base;
+    font-weight: 600;
     line-height: 1.3125;
 }
+
+
+/* pagenation
+-------------------- */
+.pagenation {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.pagenation a {
+	transition: all 0.3s ease 0s;
+}
+
+.pagenation a:hover {
+	opacity: $hover-opacity;
+}
+
+.pagenation a.next,
+.pagenation a.prev {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pagenation a.next:hover,
+.pagenation a.prev:hover {
+	opacity: $hover-opacity;
+}
+
+.page-numbers {
+	background: transparent;
+	border: 3px solid #1A1A1A;
+    color: #1A1A1A;
+    font-weight: 600;
+	display: inline-block;
+	font-size: 12px;
+	height: 27px;
+	line-height: 23px;
+	margin-right: 9px;
+	min-width: 27px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.page-numbers:last-child {
+	margin-right: 0;
+}
+
+.page-numbers.current {
+	background: #1A1A1A;
+	border: 3px solid #1A1A1A;
+	color: #fff;
+	font-weight: 600;
+}
+
+.page-numbers.dots,
+.page-numbers.next,
+.page-numbers.prev {
+	border: none;
+	line-height: 23px;
+	min-width: initial;
+	width: auto;
+}
+
 
 /* --------------------
 story
@@ -636,6 +785,12 @@ comments
         width: 100%;
         background: rgba(0, 0, 0, .2);
     }
+
+    &.lower-list {
+        padding: 44px 15px 44px 30px;
+    }
+
+
 }
 
 .comments-name-wrap {
@@ -670,6 +825,7 @@ comments
     position: relative;
 }
 
+// 以下スマホ版TOPの代表コメントのスタイル
 .comments-item {
     margin-top: 30px;
     background-color: #fff;
@@ -701,17 +857,58 @@ comments
     margin-top: 10px;
 }
 
+// 以下コメント一覧ページのスタイル
+.comments-card-list {
+    @include mq('pc') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.comments-card {
+    margin-top: 30px;
+
+    @include mq('pc') {
+        width: calc(33.33333% - 30px * 2 / 3); 
+        margin-right: 30px;
+    
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}
+
+.comments-card-meta {
+    text-align: center;
+}
+
+.comments-card-name {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.comments-card-title {
+    color: #666;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.comments-card-comment {
+    line-height: 1.625;
+    margin-top: 15px;
+}
+
 /* --------------------
 cast
 -------------------- */
-.cast {
-    background-color: rgba(255, 255, 255, .9);
-    background:linear-gradient(to bottom, transparent 0%, transparent 176px, rgba(255, 255, 255, .85) 176px, rgba(255, 255, 255, .85) 100%);
+.cast-item-wrap {
+    background:linear-gradient(to bottom, transparent 0%, transparent 110px, rgba(255, 255, 255, .85) 110px, rgba(255, 255, 255, .85) 100%);
     padding-bottom: 30px;
 }
 
 .cast-item-list {
     margin-top: 24px;
+    padding-bottom: 30px;
 
     @include mq('pc') {
         display: flex;
@@ -729,7 +926,7 @@ cast
     }
 
     @include mq('sp') {
-        &:not(:first-child) {
+        &:not(first-child) {
             margin-top: 30px;
         }
     }
@@ -746,17 +943,17 @@ cast
     }    
 }
 
-.cast-item-meta {
-    height: 80px;
-    text-align: center;
-}
-
 .cast-item-body {
     margin-top: 40px;
-
+    
     @include mq('sp') {
         margin-top: 20px;
     }
+}
+
+.cast-item-meta {
+    height: 80px;
+    text-align: center;
 }
 
 .cast-item-name {
@@ -782,7 +979,6 @@ cast
 }
 
 .cast-footer {
-    margin-top: 30px;
     text-align: center;
 
     .util-link {
@@ -793,6 +989,147 @@ cast
             border: 5px solid $color-util-link;
         }
     }
+}
+
+// 以下キャスト一覧ページ（中段）のスタイル
+.cast-media-wrap {
+    @include mq('pc') {
+        padding: 30px;
+    }
+
+    @include mq('sp') {
+        padding: 30px 0;
+    }
+}
+
+.cast-media-list {
+    @include mq('pc') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.cast-media {
+    margin-top: 30px;
+
+    @include mq('pc') {
+        display: flex;
+        width: calc(50% - 30px / 2); 
+        margin-right: 30px;
+    
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+}
+
+.cast-media-img {
+    img {
+        width: 130px;
+        height: 130px;
+        object-fit:cover;
+        border-radius:50%;
+
+        @include mq('sp') {
+            width: 220px;
+            height: 220px;    
+        }
+    } 
+    
+    @include mq('sp') {
+        text-align: center;
+    }
+}
+
+.cast-media-body {
+    @include mq('pc') {
+        margin-left: 10px;
+    }
+
+    @include mq('sp') {
+        margin-top: 20px;
+    }
+}
+
+.cast-media-meta {
+    @include mq('sp') {
+        text-align: center;
+    }
+}
+
+.cast-media-role {
+    color: #666;
+    font-size: 17px;
+}
+
+.cast-media-name {
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.cast-media-program {
+    color: #1A1A1A;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.cast-media-profile {
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 1.75;
+    
+    @include mq('pc') {
+        height: 112px;
+        overflow: scroll;
+    }
+}
+
+
+// 以下キャスト一覧ページ（下段）のスタイル
+.cast-card-wrap {
+    background-color: rgba(255, 255, 255, .85);
+    padding: 50px 40px;
+}
+
+.cast-card-list{
+    text-align: center;
+
+    @include mq('pc') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.cast-card {
+    margin-top: 30px;
+    height: 100px;
+
+    @include mq('pc') {
+        width: calc(33.33333% - 30px * 2 / 3); 
+        margin-right: 30px;
+    
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}
+
+.cast-card-role {
+    color: #666;
+    font-size: 17px;
+}
+
+.cast-card-name {
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.cast-card-program {
+    color: #1A1A1A;
+    font-size: 12px;
+    margin-top: 15px;
 }
 
 /* --------------------
@@ -833,6 +1170,7 @@ schedule
 
     td {
         padding: 1rem .5rem;
+        line-height: 1;
         text-align: center;
 
         @include mq('sp') {
@@ -854,20 +1192,19 @@ schedule
 .schedule-footer {
     margin-top: 30px;
     text-align: center;
-}
 
-.util-link {
-    &.booking {
-        @include mq('pc') {
-            margin-left: 30px;
-        }
-
-        @include mq('sp') {
-            margin-top: 15px;
+    .util-link {
+        &.booking {
+            @include mq('pc') {
+                margin-left: 30px;
+            }
+    
+            @include mq('sp') {
+                margin-top: 15px;
+            }
         }
     }
 }
-
 
 
 /* --------------------
