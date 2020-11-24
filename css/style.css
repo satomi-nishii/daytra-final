@@ -314,7 +314,7 @@ top
   }
 }
 
-/* top-lower
+/* top-lower（下層ページのTOP）
 -------------------- */
 .top-lower-wrap {
   background-image: url("../img/top.png");
@@ -537,6 +537,7 @@ news
 .news-item {
   background-color: #fff;
   margin-top: 30px;
+  /* TOP下段のitemのスタイル */
 }
 
 @media screen and (min-width: 768px) {
@@ -570,6 +571,7 @@ news
   display: block;
   -webkit-transition: .3s;
   transition: .3s;
+  /* TOP下段のitemのスタイル */
 }
 
 .news-item-link:hover {
@@ -603,6 +605,7 @@ news
      object-fit: cover;
 }
 
+/* TOP下段のitemのスタイル */
 @media screen and (min-width: 768px) {
   .news-item-img.news-item-2nd {
     -webkit-box-flex: 0;
@@ -624,6 +627,7 @@ news
 .news-item-body {
   padding: 15px;
   height: 120px;
+  /* TOP下段のitemのスタイル */
 }
 
 @media screen and (min-width: 768px) {
@@ -709,6 +713,8 @@ news
   width: auto;
 }
 
+/* 以下singleページのスタイル
+-------------------- */
 .news-item.is-single {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.85);
@@ -951,6 +957,188 @@ story
   }
 }
 
+/* 以下下層のstoryページのスタイル
+-------------------- */
+.story-single-top {
+  background-color: #000;
+}
+
+.story-bg-inner {
+  background-image: url("../img/story-1.png");
+  background-position: center left -120%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .story-bg-inner {
+    background-position: center;
+  }
+}
+
+.story-bg-inner::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+  .story-bg-inner::before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.story-bg-inner .breadcrumb {
+  color: #fff;
+  position: relative;
+}
+
+.story-bg-inner .breadcrumb a {
+  color: #fff;
+}
+
+.story-bg-inner .util-title {
+  color: #fff;
+  position: relative;
+}
+
+.story-bg-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.story-container-second {
+  background-color: #000;
+}
+
+.story-content-wrap {
+  padding: 60px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap {
+    padding: 30px 0;
+  }
+}
+
+.story-content-wrap.-second {
+  background-image: url("../img/story-2.png");
+  background-position: top right;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap.-second {
+    background-position: center;
+  }
+}
+
+.story-content-wrap.-second::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap.-second::before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.story-content-wrap.-third {
+  background-image: url("../img/story-3.png");
+  background-position: center left;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap.-third {
+    background-position: center;
+  }
+}
+
+.story-content-wrap.-third::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap.-third::before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.story-content-wrap.-fourth {
+  background-image: url("../img/story-4.png");
+  background-position: center right;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap.-fourth {
+    background-position: center;
+  }
+}
+
+.story-content-wrap.-fourth::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 767px) {
+  .story-content-wrap.-fourth::before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.story-text {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.75;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .story-text {
+    max-width: 390px;
+    height: 213px;
+    overflow: scroll;
+  }
+}
+
+.story-text.-top, .story-text.-third {
+  margin-left: auto;
+}
+
 /* --------------------
 comments
 -------------------- */
@@ -1030,6 +1218,8 @@ comments
   position: relative;
 }
 
+/* 以下スマホ版TOPの代表コメントのスタイル
+-------------------- */
 .comments-item {
   margin-top: 30px;
   background-color: #fff;
@@ -1061,6 +1251,8 @@ comments
   margin-top: 10px;
 }
 
+/* 以下コメント一覧ページのスタイル
+-------------------- */
 @media screen and (min-width: 768px) {
   .comments-card-list {
     display: -webkit-box;
@@ -1206,6 +1398,8 @@ cast
   border: 5px solid #c63205;
 }
 
+/* 以下キャスト一覧ページ（中段）のスタイル
+-------------------- */
 @media screen and (min-width: 768px) {
   .cast-media-wrap {
     padding: 30px;
@@ -1314,6 +1508,8 @@ cast
   }
 }
 
+/* 以下キャスト一覧ページ（下段）のスタイル
+-------------------- */
 .cast-card-wrap {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 50px 40px;
@@ -1481,6 +1677,7 @@ inquiry
   .inquiry-list input[type="email"],
   .inquiry-list textarea {
     font-size: 18px;
+    /* 入力域のフォントサイズ */
   }
 }
 
@@ -1501,13 +1698,14 @@ inquiry
   resize: vertical;
 }
 
+/* 以下inputのオートコンプリートしたときの背景色の初期化の記述
+-------------------- */
 @-webkit-keyframes onAutoFillStart {
   from {
   }
   to {
   }
 }
-
 @keyframes onAutoFillStart {
   from {
   }
@@ -1522,6 +1720,7 @@ input:-webkit-autofill {
   transition: background-color 50000s ease-in-out 0s;
 }
 
+/* ここまで */
 @media screen and (min-width: 768px) {
   .inquiry-item {
     display: -webkit-box;
