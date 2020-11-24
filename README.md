@@ -1,2 +1,2 @@
-# daytra-final
- デイトラ卒業制作です。
+# daytra-final-cd
+ デイトラ卒業制作です。（コーディング）
