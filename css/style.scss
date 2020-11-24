@@ -1703,3 +1703,53 @@ footer
         font-size: 11px;
     }
 }
+
+/* --------------------
+404
+-------------------- */
+
+.page-404-inner {
+    background-color: rgba(255, 255, 255, .29);
+    font-weight: 600;
+    line-height: 1.66667;
+    text-align: center;
+    padding: 60px 30px;
+
+    @include mq('sp') {
+        padding: 30px 15px;
+    }
+
+    .util-link {
+        padding: 23px 30px;
+        margin-top: 30px;
+
+        @include mq('sp') {
+            padding: 13px 20px;
+        }
+    }
+}
+
+.page-404-title {
+    font-size: 80px;
+	font-weight: 700;
+    line-height: 1.2;
+
+    @include mq('sp') {
+        font-size: 40px;
+    }
+}
+
+.page-404-message-1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 30px;
+
+    @include mq('sp') {
+        font-size: 24px;
+        margin-top: 24px;
+    }
+}
+
+.page-404-message-2 {
+    margin-top: 20px;
+}

@@ -1843,4 +1843,61 @@ footer
     font-size: 11px;
   }
 }
+
+/* --------------------
+404
+-------------------- */
+.page-404-inner {
+  background-color: rgba(255, 255, 255, 0.29);
+  font-weight: 600;
+  line-height: 1.66667;
+  text-align: center;
+  padding: 60px 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .page-404-inner {
+    padding: 30px 15px;
+  }
+}
+
+.page-404-inner .util-link {
+  padding: 23px 30px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .page-404-inner .util-link {
+    padding: 13px 20px;
+  }
+}
+
+.page-404-title {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 767px) {
+  .page-404-title {
+    font-size: 40px;
+  }
+}
+
+.page-404-message-1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .page-404-message-1 {
+    font-size: 24px;
+    margin-top: 24px;
+  }
+}
+
+.page-404-message-2 {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */
